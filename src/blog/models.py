@@ -9,3 +9,6 @@ class BlogPost(models.Model):
     embedding = VectorField(dimensions=384, blank=True, null=True)
     can_delete = models.BooleanField(default=False, help_text="Use in jupyter notebooks")
     
+
+    def get_embedding_text_raw(self):
+        return self.content
